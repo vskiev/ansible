@@ -1,4 +1,8 @@
 - hosts: centos
-  tasks: 
+#  vars:
+#    control_server: controlNode
+#    web_root: /var/www/html/
+  vars_files: vars.yml
+   tasks: 
    - name: install Linx on App servers
-     yum: pkg=linx state=installed update_cache=true
+     yum: pkg=python state=installed update_cache=true
