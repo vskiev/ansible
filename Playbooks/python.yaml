@@ -1,0 +1,4 @@
+- hosts: centos
+  tasks: 
+   - name: install Linx on App servers
+     yum: pkg=linx state=installed update_cache=true
