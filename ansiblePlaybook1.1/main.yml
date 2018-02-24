@@ -1,0 +1,10 @@
+---#my testing playbook for personal purpose
+-host: controlNode
+ user: test
+ sudo: yes
+ connection: ssh
+ gether_facts: no
+ tasks:
+ -name: update system 
+  state: latest
+  update_chache: yes
