@@ -1,4 +1,4 @@
----# my second ansible palaybook
+--- # my second ansible palaybook
 - hosts: centos
   user: test
   sudo: yes
