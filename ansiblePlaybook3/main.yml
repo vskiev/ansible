@@ -14,4 +14,4 @@
       action: yum name=lynx state=installed
     - name: check if telnet is availible
       action: yum name=telnet state=absent
-
+  
