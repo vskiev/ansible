@@ -1,0 +1,17 @@
+---# ansible playbook version 3
+- hosts: centos
+  user: test
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  vars:
+    playbook_version: 0.1b
+#  vars_files: 
+#    - vars/author.yml
+#    - vars/defaults.yml
+  tasks:
+    - name: install linx web browser
+      action: yum name=linx state=installed
+    - name: check if telnet is availible
+      action: yum name=telnet state=absent
+
