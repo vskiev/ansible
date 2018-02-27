@@ -1,0 +1,5 @@
+--- #basic include statment
+- name: install the telnet client
+  yum: pkg=telnet state=latest
+- name: install linx browser
+  yum: pkg=linx state=latest

@@ -1,0 +1,18 @@
+--- # interactive playbook
+- hosts: centos
+  user: test
+  sudo: yes
+  connection: ssh
+  #gathering_facts: no
+  gather_facts: true
+  vars: 
+    playbook_version : 0.1b
+  vars_prompt: 
+      - name: packagetoinstall
+        prompt: install which package?
+        default: telnet
+        private: no 
+  tasks:
+      - name: install the indicated package
+        yum: pkg={{ packagetoinstall }} state=installed
+  

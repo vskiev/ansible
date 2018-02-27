@@ -1,0 +1,16 @@
+--- # ansible until
+- hosts: centos
+  user: test
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: install apache webserver
+      yum: pkg=httpd state=latest
+    - name: verify service status
+      shell: systemctl status httpd.service
+      register: result 
+      until: result.stdout.find("active(running)") != -1
+      retries: 5 
+      delay: 5
+    - debug: var=result   

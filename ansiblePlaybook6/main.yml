@@ -1,0 +1,14 @@
+--- #outline to playbook translation
+- hosts: all
+  user: test
+  sudo: yes
+  gather_facts: no
+  connection: ssh
+  vars:
+    playbook_version: 0.1
+  vars_files:
+  - /vars/defaults.yml
+     
+    
+
+      

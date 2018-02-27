@@ -1,0 +1,10 @@
+--- # full include task example
+- hosts: centos
+  user: test
+  sudo: yes
+  gather_facts: no
+  tasks:
+    - include: plays/include.yml
+    - name: verify the telnet is installed
+      raw: yum list installed | grep telnet > /home/test/pkgs.log
+       

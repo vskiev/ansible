@@ -1,0 +1,15 @@
+--- #hendler section
+- hosts: centos
+  user: test
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  vars: 
+    playbook_version 0.2b
+  tasks:
+    - name: Install Apache web server
+      action: yum name=httpd state=installed
+      notify: Restart HTTPD
+  handlers: 
+   - name: Restart HTTPD
+     action: service name=httpd state=restarted
